@@ -42,7 +42,7 @@ func LoadYAMLEnv(t *testing.T, filepath string) (resetEnv func()) {
 
 	return func() {
 		for name := range newenvvars {
-			os.Setenv(oldenvvars[name])
+			os.Setenv(name, oldenvvars[name])
 		}
 	}
 }
